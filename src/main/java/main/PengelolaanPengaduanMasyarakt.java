@@ -46,15 +46,16 @@ public class PengelolaanPengaduanMasyarakt {
 
         scanner.close();
     }
+    //Digunakan untuk memproses tambah pengaduan 
     private static void tambahPengaduan(Scanner scanner, PengelolaDataPengaduan controller,
                 PengaduanView view) {
 
-        view.tampilkanJudul("TAMBAH PENGADUAN");
-        String id = controller.generateId();
+        view.tampilkanJudul("TAMBAH PENGADUAN"); //Digunakan sebagai juduk di header
+        String id = controller.generateId(); //Digunakan untuk memanggil method generate id
         view.tampilkanIdOtomatis(id);
         String nama = ValidasiInput.inputNamaPelapor(scanner, "Masukkan Nama Pelapor: ");
         view.tampilkanPilihanJenisPengaduan();
-        String jenis;
+        String jenis; //Digunakan untuk menampilkan pilihann jenis
         while (true) {
             System.out.print("Pilih Jenis Pengaduan: ");
             String pilihanJenis = scanner.nextLine();
@@ -107,6 +108,7 @@ public class PengelolaanPengaduanMasyarakt {
         }
         view.tampilkanPesan("Status awal   : Menunggu Konfirmasi Petugas");
     }
+    //Digunakan untuk memproses ubah status pengaduan
     private static void ubahStatus(Scanner scanner, PengelolaDataPengaduan controller,
                  PengaduanView view) {
 
@@ -131,7 +133,7 @@ public class PengelolaanPengaduanMasyarakt {
             view.tampilkanInfo("Perubahan status dibatalkan.");
         }
     }
-    
+    //Digunakan untuk memproses hapus data pengaduan
     private static void hapusPengaduan(Scanner scanner, PengelolaDataPengaduan controller,
                 PengaduanView view) {
 
