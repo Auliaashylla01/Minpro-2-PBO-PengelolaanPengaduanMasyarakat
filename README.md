@@ -524,14 +524,13 @@ Pemisahan ini digunakan untuk membedakan pengelolaan data, tampilan, dan proses 
 
 Superclass `Pengaduan` memiliki method:            
 
-<img width="650" height="205" alt="image" src="https://github.com/user-attachments/assets/b3ca9064-78c2-4da2-b692-f543c9115f32" />          
+<img width="650" height="205" alt="image" src="https://github.com/user-attachments/assets/b3ca9064-78c2-4da2-b692-f543c9115f32" />    
 
 *Gambar 17: Method asal Override di Kedua Subclass.*
 
-Method tersebut kemudian dioverride oleh masing-masing subclass:                  
+Method tersebut kemudian dioverride oleh masing-masing subclass: 
 
 <img width="712" height="176" alt="image" src="https://github.com/user-attachments/assets/8215712a-7919-430a-b6c1-ef21433246e7" />                    
-
 
 *Gambar 18: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*          
 
@@ -541,16 +540,12 @@ pada `pengaduanBiasa`, dan:
 
 *Gambar 19: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*     
 
-pada `pengaduanDarurat`.                  
+pada `pengaduanDarurat`. Method `getDetailPengaduan()` juga dioverride pada kedua subclass untuk menambahkan informasi khusus sesuai jenis pengaduan.                              
 
-Method `getDetailPengaduan()` juga dioverride pada kedua subclass untuk menambahkan informasi khusus sesuai jenis pengaduan.
-
-Polymorphism juga terlihat pada penggunaan:                  
+Polymorphism juga terlihat pada penggunaan:       
 
 <img width="408" height="56" alt="image" src="https://github.com/user-attachments/assets/46895aa6-fe00-4edb-9be3-71bd97aabedc" />     
 
 *Gambar 20: Penggunaan `ArrayList<Pengaduan>` pada controller yang memungkinkan object `pengaduanBiasa` dan `pengaduanDarurat` disimpan dalam satu koleksi.*                 
 
 Walaupun tipe referensinya adalah `Pengaduan`, object yang disimpan dapat berasal dari subclass `pengaduanBiasa` maupun `pengaduanDarurat`. Ketika method yang dioverride dipanggil, Java akan menjalankan implementasi sesuai object sebenarnya.                            
-
-
