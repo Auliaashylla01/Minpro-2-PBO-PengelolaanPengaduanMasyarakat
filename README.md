@@ -243,6 +243,10 @@ Data tampil pada terminal
 
 Fitur **Ubah Status Pengaduan** menggunakan alur status bertahap agar perubahan status tidak dapat dilakukan secara acak.
 
+<img width="377" height="242" alt="image" src="https://github.com/user-attachments/assets/bac2cd7f-d218-4dde-9450-e6c6bf2493e8" />                
+
+*Gambar 5: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*        
+
 Urutan status adalah:
 
 ```text
@@ -256,11 +260,6 @@ Menunggu Konfirmasi Petugas
 Pengguna memasukkan ID pengaduan yang akan diubah. Sistem kemudian mencari data berdasarkan ID tersebut. Setelah data ditemukan, sistem menentukan status berikutnya berdasarkan status saat ini.
 
 Apabila pengaduan sudah berada pada status `Selesai Ditindaklanjuti`, status tidak dapat diubah lagi.
-
-
-<img width="377" height="242" alt="image" src="https://github.com/user-attachments/assets/bac2cd7f-d218-4dde-9450-e6c6bf2493e8" />                
-
-*Gambar 5: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*        
 
 ```text
 Pilih Ubah Status
@@ -397,13 +396,12 @@ Dua subclass mewarisi class tersebut:
 
 *Gambar 10: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
 
-dan Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
-
 <img width="449" height="62" alt="image" src="https://github.com/user-attachments/assets/8d4f92c8-39de-4783-9c28-5402edc97443" />            
 
 *Gambar 11: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
 
-Contoh:
+Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.                    
+Contoh:                        
 
 <img width="556" height="115" alt="image" src="https://github.com/user-attachments/assets/cbf53c77-af77-4ed7-bdb3-b739e0842dae" />            
 
@@ -458,7 +456,6 @@ pada `pengaduanBiasa`, dan:
 *Gambar 19: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*     
 
 pada `pengaduanDarurat`. Method `getDetailPengaduan()` juga dioverride pada kedua subclass untuk menambahkan informasi khusus sesuai jenis pengaduan.                              
-
 Polymorphism juga terlihat pada penggunaan:       
 
 <img width="408" height="56" alt="image" src="https://github.com/user-attachments/assets/46895aa6-fe00-4edb-9be3-71bd97aabedc" />     
