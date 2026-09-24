@@ -460,9 +460,6 @@ Contoh yang dapat ditampilkan:
 
 *Gambar 16: Pengujian validasi input melalui terminal yang menunjukkan sistem menolak input tidak sesuai dan meminta pengguna memasukkan data kembali.*
 
-
-Contoh lainnya dapat berupa input nama yang mengandung angka, tanggal dengan format yang salah, atau kontak darurat yang tidak sesuai aturan.
-
 ---
 
 # 8. Dummy Data Awal
