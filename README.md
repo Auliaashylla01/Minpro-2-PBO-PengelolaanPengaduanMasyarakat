@@ -397,13 +397,11 @@ Dua subclass mewarisi class tersebut:
 
 *Gambar 10: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
 
-dan
+dan Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
 <img width="449" height="62" alt="image" src="https://github.com/user-attachments/assets/8d4f92c8-39de-4783-9c28-5402edc97443" />            
 
 *Gambar 11: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
-
-Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
 Contoh:
 
@@ -415,81 +413,7 @@ Dengan inheritance, atribut dan perilaku umum tidak perlu ditulis kembali pada m
 
 ---
 
-# 7. Penerapan Validasi Input
-
-Validasi input diterapkan agar data yang dimasukkan pengguna sesuai dengan aturan yang telah ditentukan dan mengurangi kemungkinan kesalahan saat program berjalan.
-
-Sebagian besar validasi dipusatkan pada class `ValidasiInput`, sedangkan pilihan jenis pengaduan dan tingkat urgensi divalidasi melalui perulangan pada proses tambah pengaduan.
-
-### Jenis validasi yang diterapkan
-
-| Method / Proses           | Fungsi Validasi                                                                             |
-| ------------------------- | ------------------------------------------------------------------------------------------- |
-| `inputMenu()`             | Memastikan pilihan menu berupa angka 1–5.                                                   |
-| `inputTidakKosong()`      | Mencegah input teks kosong atau hanya berisi spasi.                                         |
-| `inputNamaPelapor()`      | Memastikan nama tidak kosong, minimal 3 karakter, serta hanya terdiri dari huruf dan spasi. |
-| `inputTanggal()`          | Memeriksa struktur tanggal `dd/mm/yyyy`, bulan, dan jumlah hari pada bulan.                 |
-| `inputidPengaduan()`      | Memastikan ID mengikuti format seperti `P001`.                                              |
-| `inputKontakDarurat()`    | Memastikan nomor kontak diawali `08`, terdiri dari angka, dan berjumlah 10–13 digit.        |
-| `inputKonfirmasi()`       | Membatasi jawaban konfirmasi hanya `y` atau `n`.                                            |
-| Pemilihan jenis pengaduan | Membatasi pilihan pada kategori 1–5.                                                        |
-| Pemilihan tingkat urgensi | Membatasi pilihan hanya 1 untuk biasa atau 2 untuk darurat.                                 |
-
-Contoh validasi menu:
-
-<img width="569" height="295" alt="image" src="https://github.com/user-attachments/assets/3beece82-cb04-4866-b829-6199935f2ac0" />
-
-*Gambar 13: Penerapan validasi input pada class `ValidasiInput` untuk membatasi format dan nilai input pengguna.*
-
-Jika input bukan angka atau berada di luar rentang tersebut, sistem akan menampilkan pesan error dan meminta input kembali.
-
-### Bukti validasi melalui output program
-
-Screenshot output juga digunakan untuk menunjukkan bahwa validasi benar-benar berjalan ketika pengguna memberikan input yang tidak sesuai.
-
-Contoh yang dapat ditampilkan:
-
-<img width="332" height="172" alt="image" src="https://github.com/user-attachments/assets/bd6f26c7-e4ba-4b4f-acd2-4f2ab71cc28c" />
-
-*Gambar 14: Pengujian validasi input melalui terminal yang menunjukkan sistem menolak input tidak sesuai dan meminta pengguna memasukkan data kembali.*
-
----
-
-# 8. Dummy Data Awal
-
-Program memiliki dummy data awal yang dimasukkan ke dalam `ArrayList` pada constructor `PengelolaDataPengaduan`.
-
-Data awal terdiri dari:
-
-1. Pengaduan biasa atas nama Budi Santoso dengan jenis pengaduan Jalan.
-2. Pengaduan darurat atas nama Siti Aminah dengan jenis pengaduan Keamanan.
-
-Contoh penerapannya:
-
-<img width="471" height="68" alt="image" src="https://github.com/user-attachments/assets/c69ef63d-3e6c-4051-9867-c98bc58a35d7" />
-
-*Gambar 15: Penerapan dummy data awal pada `PengelolaDataPengaduan` melalui method `muatData()` yang dipanggil ketika controller dibuat.*
-
-Kemudian method `muatData()` membuat object pengaduan dan memasukkannya ke dalam `ArrayList`.
-
----
-
-# 9. Penerapan CRUD
-
-Program menerapkan operasi pengelolaan data menggunakan `ArrayList`.
-
-| Operasi    | Implementasi                                                                      |
-| ---------- | --------------------------------------------------------------------------------- |
-| **Create** | Menambahkan object `pengaduanBiasa` atau `pengaduanDarurat` ke dalam `ArrayList`. |
-| **Read**   | Menampilkan seluruh data dari `ArrayList` melalui `PengaduanView`.                |
-| **Update** | Mengubah status pengaduan berdasarkan ID.                                         |
-| **Delete** | Menghapus object pengaduan berdasarkan ID.                                        |
-
-Controller menjadi bagian yang menangani proses CRUD, sedangkan `PengaduanView` digunakan untuk menampilkan hasilnya kepada pengguna.
-
----
-
-# 10. Ringkasan Penerapan Nilai Tambah
+# 7. Ringkasan Penerapan Nilai Tambah
 
 Nilai tambah yang diterapkan dalam program adalah:
 
