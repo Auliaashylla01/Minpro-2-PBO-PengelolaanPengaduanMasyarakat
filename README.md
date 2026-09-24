@@ -4,13 +4,13 @@
 
 ## 1. Deskripsi Singkat Program
 
-**Sistem Pengelolaan Pengaduan Masyarakat** merupakan program yang digunakan untuk mencatat dan mengelola data pengaduan yang disampaikan oleh masyarakat. Program ini dapat digunakan untuk menangani berbagai jenis laporan, seperti fasilitas umum, kebersihan, keamanan, jalan, dan pelayanan.
+Sistem Pengelolaan Pengaduan Masyarakat merupakan program yang digunakan untuk mencatat dan mengelola data pengaduan yang disampaikan oleh masyarakat. Program ini dapat digunakan untuk menangani berbagai jenis laporan, seperti fasilitas umum, kebersihan, keamanan, jalan, dan pelayanan.
 
-Setiap data pengaduan memiliki informasi berupa **ID Pengaduan, Nama Pelapor, Jenis Pengaduan, Isi Pengaduan, Tanggal Pengaduan, Tingkat Urgensi, dan Status Pengaduan**. ID pengaduan dibuat secara otomatis oleh sistem dengan format `P001`, `P002`, dan seterusnya. Jenis pengaduan dipilih melalui kategori yang telah disediakan sehingga data yang dimasukkan lebih terstruktur.
+Setiap data pengaduan memiliki informasi berupa ID Pengaduan, Nama Pelapor, Jenis Pengaduan, Isi Pengaduan, Tanggal Pengaduan, Tingkat Urgensi, dan Status Pengaduan. ID pengaduan dibuat secara otomatis oleh sistem dengan format `P001`, `P002`, dan seterusnya. Jenis pengaduan dipilih melalui kategori yang telah disediakan sehingga data yang dimasukkan lebih terstruktur.
 
 Program membedakan pengaduan menjadi dua jenis berdasarkan tingkat urgensinya, yaitu **pengaduan biasa** dan **pengaduan darurat**. Pengaduan biasa memiliki target penyelesaian standar 7 hari, sedangkan pengaduan darurat memiliki target respons awal standar 24 jam dan menyimpan kontak darurat pelapor.
 
-Pengguna dapat menjalankan beberapa fitur utama melalui menu interaktif, yaitu **Tambah Pengaduan, Lihat Pengaduan, Ubah Status Pengaduan, Hapus Pengaduan, dan Keluar**. Data selama program berjalan disimpan menggunakan `ArrayList`.
+Pengguna dapat menjalankan beberapa fitur utama melalui menu interaktif, yaitu Tambah Pengaduan, Lihat Pengaduan, Ubah Status Pengaduan, Hapus Pengaduan, dan Keluar. Data selama program berjalan disimpan menggunakan `ArrayList`.
 
 ---
 
@@ -70,23 +70,12 @@ src/
 
 Menu utama yang tersedia pada sistem adalah:
 
-```text
-==================================================
-      SISTEM PENGELOLAAN PENGADUAN MASYARAKAT
-==================================================
-1. Tambah Pengaduan
-2. Lihat Pengaduan
-3. Ubah Status Pengaduan
-4. Hapus Pengaduan
-5. Keluar
-==================================================
-```
+<img width="280" height="119" alt="image" src="https://github.com/user-attachments/assets/f8c819d5-7c75-4229-99bd-28b323aa2432" />                    
 
-Menu tersebut digunakan sebagai pusat navigasi program. Setelah pengguna menyelesaikan suatu proses, program akan kembali ke menu utama selama pengguna belum memilih menu **Keluar**.
+*Gambar 1: Tampilan menu utama Sistem Pengelolaan Pengaduan Masyarakat sebagai pusat navigasi seluruh fitur program.*
 
-<!-- MASUKKAN SCREENSHOT OUTPUT MENU UTAMA DI SINI -->
+Menu tersebut digunakan sebagai pusat navigasi program. Setelah pengguna menyelesaikan suatu proses, program akan kembali ke menu utama selama pengguna belum memilih menu Keluar.
 
-*Gambar 2: Tampilan menu utama Sistem Pengelolaan Pengaduan Masyarakat sebagai pusat navigasi seluruh fitur program.*
 
 ---
 
@@ -152,31 +141,47 @@ Urutan prosesnya adalah:
 
 ```text
 Pilih Menu Tambah Pengaduan
-          ↓
-Generate ID Otomatis
-          ↓
-Input Nama Pelapor
-          ↓
-Pilih Jenis Pengaduan
-          ↓
-Input Isi Pengaduan
-          ↓
-Input Tanggal Pengaduan
-          ↓
-Pilih Tingkat Urgensi
-       ↙         ↘
-    Biasa       Darurat
-      ↓             ↓
-  Buat Object   Input Kontak
-pengaduanBiasa    Darurat
-      ↓             ↓
-      └──────┬──────┘
-             ↓
-       Simpan ke ArrayList
-             ↓
-       Tampilkan Berhasil
-             ↓
-        Kembali ke Menu
+                         │
+                         ▼
+                Generate ID Otomatis
+                         │
+                         ▼
+                Input Nama Pelapor
+                         │
+                         ▼
+              Pilih Jenis Pengaduan
+                         │
+                         ▼
+                 Input Isi Pengaduan
+                         │
+                         ▼
+               Input Tanggal Pengaduan
+                         │
+                         ▼
+               Pilih Tingkat Urgensi?
+                  ┌──────┴──────┐
+                  │             │
+                  ▼             ▼
+                Biasa        Darurat
+                  │             │
+                  ▼             ▼
+             Buat Object   Input Kontak
+           pengaduanBiasa    Darurat
+                  │             │
+                  │             ▼
+                  │        Buat Object
+                  │      pengaduanDarurat
+                  │             │
+                  └──────┬──────┘
+                         │
+                         ▼
+                Simpan ke ArrayList
+                         │
+                         ▼
+                Tampilkan Berhasil
+                         │
+                         ▼
+                 Kembali ke Menu
 ```
 
 ID tidak dimasukkan secara manual oleh pengguna. Sistem menghasilkan ID berdasarkan ID yang belum digunakan, misalnya `P001`, `P002`, dan seterusnya.
@@ -204,13 +209,13 @@ Pilihan tersebut menentukan object subclass yang dibuat. Pengaduan biasa akan me
 
 <img width="334" height="298" alt="image" src="https://github.com/user-attachments/assets/dfbd73e3-e3bb-42e5-a5b6-16b4828c6dbb" />                      
 
-*Gambar 3: Proses penambahan pengaduan biasa, mulai dari ID otomatis, pengisian data pengaduan, pemilihan jenis dan urgensi, hingga data berhasil disimpan.*                 
+*Gambar 2: Proses penambahan pengaduan biasa, mulai dari ID otomatis, pengisian data pengaduan, pemilihan jenis dan urgensi, hingga data berhasil disimpan.*                 
 
 ### Bukti output proses tambah pengaduan darurat            
 
 <img width="374" height="306" alt="image" src="https://github.com/user-attachments/assets/2dbff5be-98f0-43bc-88fe-7545cee8f4b1" />        
 
-*Gambar 4: Proses penambahan pengaduan darurat yang menghasilkan object `pengaduanDarurat` dan meminta input kontak darurat pelapor.*          
+*Gambar 3: Proses penambahan pengaduan darurat yang menghasilkan object `pengaduanDarurat` dan meminta input kontak darurat pelapor.*          
 
 ---
 
@@ -234,9 +239,9 @@ Data tampil pada terminal
 
 Data dummy telah dimasukkan sejak `PengelolaDataPengaduan` dibuat. Oleh karena itu, ketika program pertama kali menjalankan menu **Lihat Pengaduan**, data sudah langsung tersedia tanpa harus melakukan proses tambah terlebih dahulu.
 
-<!-- MASUKKAN SCREENSHOT OUTPUT MENU LIHAT PENGADUAN DI SINI -->
+<img width="464" height="283" alt="image" src="https://github.com/user-attachments/assets/05dbb5a0-5465-4e98-bd92-143d5d8dfaa0" />                
 
-*Gambar 5: Tampilan data pengaduan pada fitur **Lihat Pengaduan**, termasuk data dummy yang telah tersedia sejak program dijalankan.*
+*Gambar 4: Tampilan data pengaduan pada fitur Lihat Pengaduan, termasuk data dummy yang telah tersedia sejak program dijalankan.*
 
 ---
 
@@ -260,37 +265,43 @@ Apabila pengaduan sudah berada pada status `Selesai Ditindaklanjuti`, status tid
 
 ```text
 Pilih Ubah Status
-       ↓
-Input ID Pengaduan
-       ↓
-Cari Data berdasarkan ID
-       ↓
-Data ditemukan?
-   ┌────┴────┐
-  Tidak      Ya
-   │          │
-   ▼          ▼
- Error    Cek Status Saat Ini
-              ↓
-       Tentukan Status Berikutnya
-              ↓
-       Konfirmasi perubahan y/n
-          ┌───┴───┐
-          │       │
-          ▼       ▼
-          y       n
-          │       │
-          ▼       ▼
-     Ubah Status  Batal
-          │       │
-          └───┬───┘
-              ▼
-        Kembali ke Menu
+                      │
+                      ▼
+           ┌► Input ID Pengaduan ◄────────────────┐
+           │          │                           │
+           │          ▼                           │
+           │ Cari Data berdasarkan ID             │
+           │          │                           │
+           │          ▼                           │
+           │   Data ditemukan?                    │
+           │     ┌────┴────┐                      │
+           │   Tidak       Ya                     │
+           │     │          │                     │
+           │     ▼          ▼                     │
+           └── Error  Cek Status Saat Ini         │
+                            │                     │
+                            ▼                     │
+                 Tentukan Status Berikutnya       │
+                            │                     │
+                            ▼                     │
+                 Konfirmasi perubahan?            │
+                     ┌──────┴──────┐              │
+                     │             │              │
+                     ▼             ▼              │
+                    'y'           'n'             │
+                     │             │              │
+                     ▼             ▼              │
+                Ubah Status      Batal            │
+                     │             │              │
+                     └──────┬──────┘              │
+                            │                     │
+                            ▼                     │
+                     Kembali ke Menu ─────────────┘
 ```
 
-<!-- MASUKKAN SCREENSHOT OUTPUT UBAH STATUS DI SINI -->
+<img width="377" height="242" alt="image" src="https://github.com/user-attachments/assets/bac2cd7f-d218-4dde-9450-e6c6bf2493e8" />                
 
-*Gambar 6: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*
+*Gambar 5: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*
 
 ---
 
@@ -300,37 +311,42 @@ Fitur **Hapus Pengaduan** digunakan untuk menghapus data berdasarkan ID.
 
 ```text
 Pilih Hapus Pengaduan
-         ↓
-Input ID Pengaduan
-         ↓
-Cari Pengaduan
-         ↓
-Data ditemukan?
-    ┌────┴────┐
-   Tidak      Ya
-    │          │
-    ▼          ▼
-  Error    Tampilkan Ringkasan Data
-               ↓
-        Konfirmasi y / n
-            ┌──┴──┐
-            │     │
-            ▼     ▼
-            y     n
-            │     │
-            ▼     ▼
-          Hapus   Batal
-            │     │
-            └──┬──┘
-               ▼
-         Kembali ke Menu
+                         │
+                         ▼
+           ┌► Input ID Pengaduan
+           │             │
+           │             ▼
+           │       Cari Pengaduan
+           │             │
+           │             ▼
+           │      Data ditemukan?
+           │        ┌────┴────┐
+           │      Tidak      Ya
+           │        │         │
+           │        ▼         ▼
+           └─── Error    Tampilkan Ringkasan Data
+                              │
+                              ▼
+                     Konfirmasi (y/n)?
+                        ┌─────┴─────┐
+                        │           │
+                        ▼           ▼
+                       'y'         'n'
+                        │           │
+                        ▼           ▼
+                      Hapus       Batal
+                        │           │
+                        └─────┬─────┘
+                              │
+                              ▼
+                       Kembali ke Menu
 ```
 
 Sebelum data benar-benar dihapus, sistem menampilkan ringkasan data dan meminta konfirmasi. Hal tersebut mencegah penghapusan dilakukan secara langsung tanpa persetujuan pengguna.
 
-<!-- MASUKKAN SCREENSHOT OUTPUT HAPUS PENGADUAN DI SINI -->
+<img width="328" height="239" alt="image" src="https://github.com/user-attachments/assets/11717486-9d2c-4af5-b98a-645641ac31d8" />            
 
-*Gambar 7: Proses penghapusan data pengaduan melalui pencarian ID dan konfirmasi pengguna sebelum data dihapus.*
+*Gambar 6: Proses penghapusan data pengaduan melalui pencarian ID dan konfirmasi pengguna sebelum data dihapus.*
 
 ---
 
@@ -338,9 +354,9 @@ Sebelum data benar-benar dihapus, sistem menampilkan ringkasan data dan meminta 
 
 Ketika pengguna memilih menu `5`, program menampilkan pesan penutup dan mengakhiri perulangan menu.
 
-<!-- MASUKKAN SCREENSHOT OUTPUT KELUAR DI SINI -->
+<img width="380" height="170" alt="image" src="https://github.com/user-attachments/assets/e3a15630-7d23-4331-92f8-e794194d1c5a" />                    
 
-*Gambar 8: Tampilan ketika pengguna memilih menu **Keluar** dan program mengakhiri proses.*
+*Gambar 7: Tampilan ketika pengguna memilih menu Keluar dan program mengakhiri proses.*
 
 ---
 
@@ -352,20 +368,11 @@ Access modifier digunakan untuk mengatur hak akses terhadap atribut dan method d
 
 Pada class `Pengaduan`, seluruh atribut utama menggunakan `private`:
 
-```java
-private String idPengaduan;
-private String namaPelapor;
-private String jenisPengaduan;
-private String isiPengaduan;
-private String tanggalPengaduan;
-private String status;
-```
+<img width="503" height="120" alt="image" src="https://github.com/user-attachments/assets/b669957c-23b5-4e6c-960b-8462c1d6283d" />                
 
-Atribut tersebut tidak dapat diakses secara langsung dari class lain. Akses terhadap data dilakukan melalui method yang telah disediakan.
+*Gambar 9: Penerapan access modifier `private` pada atribut class `Pengaduan` untuk membatasi akses langsung terhadap data pengaduan.*            
 
-<!-- MASUKKAN SCREENSHOT KODE ATRIBUT PRIVATE DI Pengaduan.java -->
-
-*Gambar 9: Penerapan access modifier `private` pada atribut class `Pengaduan` untuk membatasi akses langsung terhadap data pengaduan.*
+Atribut tersebut tidak dapat diakses secara langsung dari class lain. Akses terhadap data dilakukan melalui method yang telah disediakan.            
 
 ---
 
@@ -375,27 +382,11 @@ Atribut tersebut tidak dapat diakses secara langsung dari class lain. Akses terh
 
 Contoh penerapannya pada class `Pengaduan`:
 
-```java
-public String getNamaPelapor() {
-    return namaPelapor;
-}
+<img width="526" height="143" alt="image" src="https://github.com/user-attachments/assets/c8f08e32-85c0-4df3-a6bc-b0eb24199b00" />                            
 
-public String getStatus() {
-    return status;
-}
+*Gambar 10: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`.* 
 
-public void setStatus(String status) {
-    this.status = status;
-}
-```
-
-Atribut `idPengaduan` tidak memiliki `setter`. Hal tersebut dilakukan karena ID dibuat secara otomatis oleh sistem dan digunakan sebagai identitas pengaduan sehingga tidak diubah melalui setter.
-
-Dengan demikian, data tidak diberikan akses langsung dari luar class, tetapi melalui method yang disediakan oleh class tersebut.
-
-<!-- MASUKKAN SCREENSHOT GETTER DAN SETTER DI Pengaduan.java -->
-
-*Gambar 10: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`. Atribut `idPengaduan` hanya memiliki getter karena nilainya dibuat otomatis oleh sistem.*
+Atribut `idPengaduan` tidak memiliki `setter`. Hal tersebut dilakukan karena ID dibuat secara otomatis oleh sistem dan digunakan sebagai identitas pengaduan sehingga tidak diubah melalui setter. Dengan demikian, data tidak diberikan akses langsung dari luar class, tetapi melalui method yang disediakan oleh class tersebut.                
 
 ---
 
@@ -403,36 +394,27 @@ Dengan demikian, data tidak diberikan akses langsung dari luar class, tetapi mel
 
 **Inheritance** digunakan dengan membuat class `Pengaduan` sebagai superclass yang memiliki atribut dan method umum untuk seluruh jenis pengaduan.
 
-Dua subclass mewarisi class tersebut:
+Dua subclass mewarisi class tersebut:                        
 
-```java
-public class pengaduanBiasa extends Pengaduan
-```
+<img width="420" height="50" alt="image" src="https://github.com/user-attachments/assets/7867d53a-aab1-4c7e-b240-38ac9667ed98" />                    
+
+*Gambar 11: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
 
 dan
 
-```java
-public class pengaduanDarurat extends Pengaduan
-```
+<img width="449" height="62" alt="image" src="https://github.com/user-attachments/assets/8d4f92c8-39de-4783-9c28-5402edc97443" />            
+
+*Gambar 12: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
 
 Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
 Contoh:
 
-```java
-super(idPengaduan, namaPelapor, jenisPengaduan,
-      isiPengaduan, tanggalPengaduan);
-```
+<img width="556" height="115" alt="image" src="https://github.com/user-attachments/assets/cbf53c77-af77-4ed7-bdb3-b739e0842dae" />            
+
+*Gambar 12: Inisialisasi `super()` pada subclass*                
 
 Dengan inheritance, atribut dan perilaku umum tidak perlu ditulis kembali pada masing-masing subclass.
-
-<!-- MASUKKAN SCREENSHOT pengaduanBiasa.java -->
-
-*Gambar 11: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
-
-<!-- MASUKKAN SCREENSHOT pengaduanDarurat.java -->
-
-*Gambar 12: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
 
 ---
 
@@ -575,20 +557,18 @@ Superclass `Pengaduan` memiliki method:
 
 Method tersebut kemudian dioverride oleh masing-masing subclass:                  
 
-<img width="907" height="152" alt="image" src="https://github.com/user-attachments/assets/523c51d7-0ee0-42c8-9dc0-313216b0567e" />          
+<img width="712" height="176" alt="image" src="https://github.com/user-attachments/assets/8215712a-7919-430a-b6c1-ef21433246e7" />                    
 
-pada `pengaduanBiasa`, dan:             
 
-*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*              
-                           
+*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*          
 
-<img width="791" height="179" alt="image" src="https://github.com/user-attachments/assets/4d29e4d0-896e-46fa-b724-6fd791a056f0" />           
+pada `pengaduanBiasa`, dan:                        
+
+<img width="523" height="175" alt="image" src="https://github.com/user-attachments/assets/81a0c49c-0c07-47c8-ac51-4fb1021f8f9f" />                                    
+
+*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*                
 
 pada `pengaduanDarurat`.                  
-
-
-*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*                    
-        
 
 Method `getDetailPengaduan()` juga dioverride pada kedua subclass untuk menambahkan informasi khusus sesuai jenis pengaduan.
 
