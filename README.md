@@ -374,7 +374,7 @@ Pada class `Pengaduan`, seluruh atribut utama menggunakan `private`:
 
 <img width="503" height="120" alt="image" src="https://github.com/user-attachments/assets/b669957c-23b5-4e6c-960b-8462c1d6283d" />                
 
-*Gambar 9: Penerapan access modifier `private` pada atribut class `Pengaduan` untuk membatasi akses langsung terhadap data pengaduan.*            
+*Gambar 8: Penerapan access modifier `private` pada atribut class `Pengaduan` untuk membatasi akses langsung terhadap data pengaduan.*            
 
 Atribut tersebut tidak dapat diakses secara langsung dari class lain. Akses terhadap data dilakukan melalui method yang telah disediakan.            
 
@@ -388,7 +388,7 @@ Contoh penerapannya pada class `Pengaduan`:
 
 <img width="526" height="143" alt="image" src="https://github.com/user-attachments/assets/c8f08e32-85c0-4df3-a6bc-b0eb24199b00" />                            
 
-*Gambar 10: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`.* 
+*Gambar 9: Penerapan encapsulation melalui method `getter` dan `setter` pada class `Pengaduan`.* 
 
 Atribut `idPengaduan` tidak memiliki `setter`. Hal tersebut dilakukan karena ID dibuat secara otomatis oleh sistem dan digunakan sebagai identitas pengaduan sehingga tidak diubah melalui setter. Dengan demikian, data tidak diberikan akses langsung dari luar class, tetapi melalui method yang disediakan oleh class tersebut.                
 
@@ -402,13 +402,13 @@ Dua subclass mewarisi class tersebut:
 
 <img width="420" height="50" alt="image" src="https://github.com/user-attachments/assets/7867d53a-aab1-4c7e-b240-38ac9667ed98" />                    
 
-*Gambar 11: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
+*Gambar 10: Penerapan inheritance pada class `pengaduanBiasa` melalui keyword `extends` dan penggunaan `super()` untuk memanggil constructor superclass `Pengaduan`.*
 
 dan
 
 <img width="449" height="62" alt="image" src="https://github.com/user-attachments/assets/8d4f92c8-39de-4783-9c28-5402edc97443" />            
 
-*Gambar 12: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
+*Gambar 11: Penerapan inheritance pada class `pengaduanDarurat` sebagai subclass kedua dari superclass `Pengaduan`.*
 
 Pada constructor subclass digunakan `super()` untuk menginisialisasi atribut yang berasal dari superclass.
 
@@ -446,7 +446,7 @@ Contoh validasi menu:
 
 <img width="569" height="295" alt="image" src="https://github.com/user-attachments/assets/3beece82-cb04-4866-b829-6199935f2ac0" />
 
-*Gambar 15: Penerapan validasi input pada class `ValidasiInput` untuk membatasi format dan nilai input pengguna.*
+*Gambar 13: Penerapan validasi input pada class `ValidasiInput` untuk membatasi format dan nilai input pengguna.*
 
 Jika input bukan angka atau berada di luar rentang tersebut, sistem akan menampilkan pesan error dan meminta input kembali.
 
@@ -458,7 +458,7 @@ Contoh yang dapat ditampilkan:
 
 <img width="332" height="172" alt="image" src="https://github.com/user-attachments/assets/bd6f26c7-e4ba-4b4f-acd2-4f2ab71cc28c" />
 
-*Gambar 16: Pengujian validasi input melalui terminal yang menunjukkan sistem menolak input tidak sesuai dan meminta pengguna memasukkan data kembali.*
+*Gambar 14: Pengujian validasi input melalui terminal yang menunjukkan sistem menolak input tidak sesuai dan meminta pengguna memasukkan data kembali.*
 
 ---
 
@@ -475,7 +475,7 @@ Contoh penerapannya:
 
 <img width="471" height="68" alt="image" src="https://github.com/user-attachments/assets/c69ef63d-3e6c-4051-9867-c98bc58a35d7" />
 
-*Gambar 17: Penerapan dummy data awal pada `PengelolaDataPengaduan` melalui method `muatData()` yang dipanggil ketika controller dibuat.*
+*Gambar 15: Penerapan dummy data awal pada `PengelolaDataPengaduan` melalui method `muatData()` yang dipanggil ketika controller dibuat.*
 
 Kemudian method `muatData()` membuat object pengaduan dan memasukkannya ke dalam `ArrayList`.
 
@@ -516,7 +516,7 @@ Pemisahan ini digunakan untuk membedakan pengelolaan data, tampilan, dan proses 
 
 <img width="251" height="188" alt="image" src="https://github.com/user-attachments/assets/d8ec4acc-8f86-4ef4-ba74-4b5c0c2d97f8" />                        
 
-*Gambar : Struktur package program yang menunjukkan pemisahan class menjadi package `main`, `model`, `controller`, dan `view` sebagai penerapan arsitektur MVC.*
+*Gambar 16: Struktur package program yang menunjukkan pemisahan class menjadi package `main`, `model`, `controller`, dan `view` sebagai penerapan arsitektur MVC.*
 
 ### 2. Polymorphism
 
@@ -526,20 +526,20 @@ Superclass `Pengaduan` memiliki method:
 
 <img width="650" height="205" alt="image" src="https://github.com/user-attachments/assets/b3ca9064-78c2-4da2-b692-f543c9115f32" />          
 
-*Gambar : Method asal Override di Kedua Subclass.*
+*Gambar 17: Method asal Override di Kedua Subclass.*
 
 Method tersebut kemudian dioverride oleh masing-masing subclass:                  
 
 <img width="712" height="176" alt="image" src="https://github.com/user-attachments/assets/8215712a-7919-430a-b6c1-ef21433246e7" />                    
 
 
-*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*          
+*Gambar 18: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*          
 
 pada `pengaduanBiasa`, dan:                        
 
 <img width="523" height="175" alt="image" src="https://github.com/user-attachments/assets/81a0c49c-0c07-47c8-ac51-4fb1021f8f9f" />                                    
 
-*Gambar 13: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*                
+*Gambar 19: Penerapan polymorphism melalui method overriding `getTingkatUrgensi()` dan `getDetailPengaduan()` pada subclass.*     
 
 pada `pengaduanDarurat`.                  
 
@@ -547,9 +547,10 @@ Method `getDetailPengaduan()` juga dioverride pada kedua subclass untuk menambah
 
 Polymorphism juga terlihat pada penggunaan:                  
 
-<img width="408" height="56" alt="image" src="https://github.com/user-attachments/assets/46895aa6-fe00-4edb-9be3-71bd97aabedc" />                      
+<img width="408" height="56" alt="image" src="https://github.com/user-attachments/assets/46895aa6-fe00-4edb-9be3-71bd97aabedc" />     
 
+*Gambar 20: Penggunaan `ArrayList<Pengaduan>` pada controller yang memungkinkan object `pengaduanBiasa` dan `pengaduanDarurat` disimpan dalam satu koleksi.*                 
 
 Walaupun tipe referensinya adalah `Pengaduan`, object yang disimpan dapat berasal dari subclass `pengaduanBiasa` maupun `pengaduanDarurat`. Ketika method yang dioverride dipanggil, Java akan menjalankan implementasi sesuai object sebenarnya.                            
 
-*Gambar 14: Penggunaan `ArrayList<Pengaduan>` pada controller yang memungkinkan object `pengaduanBiasa` dan `pengaduanDarurat` disimpan dalam satu koleksi.*                 
+
