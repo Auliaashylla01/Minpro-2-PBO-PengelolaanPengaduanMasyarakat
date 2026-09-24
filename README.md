@@ -223,6 +223,14 @@ Pilihan tersebut menentukan object subclass yang dibuat. Pengaduan biasa akan me
 
 Fitur **Lihat Pengaduan** digunakan untuk menampilkan seluruh data yang tersimpan pada `ArrayList`.
 
+
+<img width="464" height="283" alt="image" src="https://github.com/user-attachments/assets/05dbb5a0-5465-4e98-bd92-143d5d8dfaa0" />                        
+
+*Gambar 4: Tampilan data pengaduan pada fitur Lihat Pengaduan, termasuk data dummy yang telah tersedia sejak program dijalankan.*   
+
+
+Data dummy telah dimasukkan sejak `PengelolaDataPengaduan` dibuat. Oleh karena itu, ketika program pertama kali menjalankan menu Lihat Pengaduan, data sudah langsung tersedia tanpa harus melakukan proses tambah terlebih dahulu.                    
+
 ```text
 Pilih Menu Lihat Pengaduan
           ↓
@@ -236,13 +244,6 @@ Method getDetailPengaduan()
           ↓
 Data tampil pada terminal
 ```
-
-Data dummy telah dimasukkan sejak `PengelolaDataPengaduan` dibuat. Oleh karena itu, ketika program pertama kali menjalankan menu **Lihat Pengaduan**, data sudah langsung tersedia tanpa harus melakukan proses tambah terlebih dahulu.
-
-<img width="464" height="283" alt="image" src="https://github.com/user-attachments/assets/05dbb5a0-5465-4e98-bd92-143d5d8dfaa0" />                
-
-*Gambar 4: Tampilan data pengaduan pada fitur Lihat Pengaduan, termasuk data dummy yang telah tersedia sejak program dijalankan.*
-
 ---
 
 ## 5.4 Alur Ubah Status Pengaduan
@@ -262,6 +263,11 @@ Menunggu Konfirmasi Petugas
 Pengguna memasukkan ID pengaduan yang akan diubah. Sistem kemudian mencari data berdasarkan ID tersebut. Setelah data ditemukan, sistem menentukan status berikutnya berdasarkan status saat ini.
 
 Apabila pengaduan sudah berada pada status `Selesai Ditindaklanjuti`, status tidak dapat diubah lagi.
+
+
+<img width="377" height="242" alt="image" src="https://github.com/user-attachments/assets/bac2cd7f-d218-4dde-9450-e6c6bf2493e8" />                
+
+*Gambar 5: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*        
 
 ```text
 Pilih Ubah Status
@@ -299,15 +305,19 @@ Pilih Ubah Status
                      Kembali ke Menu ─────────────┘
 ```
 
-<img width="377" height="242" alt="image" src="https://github.com/user-attachments/assets/bac2cd7f-d218-4dde-9450-e6c6bf2493e8" />                
-
-*Gambar 5: Proses perubahan status pengaduan berdasarkan ID dengan konfirmasi pengguna sebelum status diperbarui.*
-
 ---
 
 ## 5.5 Alur Hapus Pengaduan
 
 Fitur **Hapus Pengaduan** digunakan untuk menghapus data berdasarkan ID.
+
+<img width="328" height="239" alt="image" src="https://github.com/user-attachments/assets/11717486-9d2c-4af5-b98a-645641ac31d8" />            
+
+*Gambar 6: Proses penghapusan data pengaduan melalui pencarian ID dan konfirmasi pengguna sebelum data dihapus.*
+
+
+Sebelum data benar-benar dihapus, sistem menampilkan ringkasan data dan meminta konfirmasi. Hal tersebut mencegah penghapusan dilakukan secara langsung tanpa persetujuan pengguna.
+
 
 ```text
 Pilih Hapus Pengaduan
@@ -341,12 +351,6 @@ Pilih Hapus Pengaduan
                               ▼
                        Kembali ke Menu
 ```
-
-Sebelum data benar-benar dihapus, sistem menampilkan ringkasan data dan meminta konfirmasi. Hal tersebut mencegah penghapusan dilakukan secara langsung tanpa persetujuan pengguna.
-
-<img width="328" height="239" alt="image" src="https://github.com/user-attachments/assets/11717486-9d2c-4af5-b98a-645641ac31d8" />            
-
-*Gambar 6: Proses penghapusan data pengaduan melalui pencarian ID dan konfirmasi pengguna sebelum data dihapus.*
 
 ---
 
