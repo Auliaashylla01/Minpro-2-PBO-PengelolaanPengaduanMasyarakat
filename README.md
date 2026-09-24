@@ -444,17 +444,11 @@ Sebagian besar validasi dipusatkan pada class `ValidasiInput`, sedangkan pilihan
 
 Contoh validasi menu:
 
-```java
-if (menu >= 1 && menu <= 5) {
-    return menu;
-}
-```
-
-Jika input bukan angka atau berada di luar rentang tersebut, sistem akan menampilkan pesan error dan meminta input kembali.
-
-<!-- MASUKKAN SCREENSHOT ValidasiInput.java BAGIAN inputMenu/inputNamaPelapor/inputTanggal -->
+<img width="569" height="295" alt="image" src="https://github.com/user-attachments/assets/3beece82-cb04-4866-b829-6199935f2ac0" />
 
 *Gambar 15: Penerapan validasi input pada class `ValidasiInput` untuk membatasi format dan nilai input pengguna.*
+
+Jika input bukan angka atau berada di luar rentang tersebut, sistem akan menampilkan pesan error dan meminta input kembali.
 
 ### Bukti validasi melalui output program
 
@@ -462,53 +456,31 @@ Screenshot output juga digunakan untuk menunjukkan bahwa validasi benar-benar be
 
 Contoh yang dapat ditampilkan:
 
-```text
-Pilih menu: abc
-[Error] Input harus berupa angka!
-
-Pilih menu: 9
-[Error] Pilihan menu hanya dari 1 sampai 5!
-
-Pilih menu: 1
-```
-
-Contoh lainnya dapat berupa input nama yang mengandung angka, tanggal dengan format yang salah, atau kontak darurat yang tidak sesuai aturan.
-
-<!-- MASUKKAN SCREENSHOT OUTPUT VALIDASI DI SINI -->
+<img width="332" height="172" alt="image" src="https://github.com/user-attachments/assets/bd6f26c7-e4ba-4b4f-acd2-4f2ab71cc28c" />
 
 *Gambar 16: Pengujian validasi input melalui terminal yang menunjukkan sistem menolak input tidak sesuai dan meminta pengguna memasukkan data kembali.*
+
+
+Contoh lainnya dapat berupa input nama yang mengandung angka, tanggal dengan format yang salah, atau kontak darurat yang tidak sesuai aturan.
 
 ---
 
 # 8. Dummy Data Awal
 
-Program memiliki **dummy data awal** yang dimasukkan ke dalam `ArrayList` pada constructor `PengelolaDataPengaduan`.
+Program memiliki dummy data awal yang dimasukkan ke dalam `ArrayList` pada constructor `PengelolaDataPengaduan`.
 
 Data awal terdiri dari:
 
-1. Pengaduan biasa atas nama **Budi Santoso** dengan jenis pengaduan **Jalan**.
-2. Pengaduan darurat atas nama **Siti Aminah** dengan jenis pengaduan **Keamanan**.
+1. Pengaduan biasa atas nama Budi Santoso dengan jenis pengaduan Jalan.
+2. Pengaduan darurat atas nama Siti Aminah dengan jenis pengaduan Keamanan.
 
 Contoh penerapannya:
 
-```java
-public PengelolaDataPengaduan() {
-    daftarPengaduan = new ArrayList<>();
-    muatData();
-}
-```
-
-Kemudian method `muatData()` membuat object pengaduan dan memasukkannya ke dalam `ArrayList`.
-
-Dummy data dibuat agar fitur **Read/Lihat Pengaduan** dapat langsung diuji ketika program pertama kali dijalankan.
-
-<!-- MASUKKAN SCREENSHOT controller BAGIAN constructor + muatData -->
+<img width="471" height="68" alt="image" src="https://github.com/user-attachments/assets/c69ef63d-3e6c-4051-9867-c98bc58a35d7" />
 
 *Gambar 17: Penerapan dummy data awal pada `PengelolaDataPengaduan` melalui method `muatData()` yang dipanggil ketika controller dibuat.*
 
-<!-- MASUKKAN SCREENSHOT OUTPUT MENU 2 YANG MENAMPILKAN DUMMY DATA -->
-
-*Gambar 18: Dummy data langsung tampil pada fitur **Lihat Pengaduan** tanpa harus melakukan input data terlebih dahulu.*
+Kemudian method `muatData()` membuat object pengaduan dan memasukkannya ke dalam `ArrayList`.
 
 ---
 
